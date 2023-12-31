@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Add Post for {{ user.first_name }} {{ user.last_name }}</h1>
+
+    <form method="POST" action="{{ url_for('add_post', user_id=user.id)}}">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">Content</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
+        <br>
+        <a href="/users/{{ user.id }}">Cancel</a>
+        <button type="submit">Add post</button>
+    </form>
+{% endblock %}
