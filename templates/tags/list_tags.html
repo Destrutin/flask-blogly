@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Tags</h1>
+
+    <ul>
+        {% for tag in tagss %}
+        <li><a href="{{ url_for('show_tag', tag_id=tag.id)}}">{{tag.name}}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_tag') }}"><button>Add tag</button></a>
+{% endblock %}
